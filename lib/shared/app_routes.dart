@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_show/main.dart';
+import 'package:movie_show/module/list_movie/list_movie.dart';
 
 class AppRoutes {
   static const String main = '/';

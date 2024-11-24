@@ -5,6 +5,7 @@ export 'app_spacing.dart';
 export 'cache_handler.dart';
 export 'component/component.dart';
 export 'constant.dart';
+export 'debouncer.dart';
 export 'exception.dart';
 export 'failure.dart';
 export 'network_info.dart';

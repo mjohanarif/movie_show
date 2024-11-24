@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:movie_show/module/list_movie/list_movie.dart';
 import 'package:movie_show/shared/shared.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -10,6 +11,49 @@ final locator = GetIt.instance;
 
 Future<void> initLocator() async {
   locator
+    // repository
+    ..registerLazySingleton<MovieListRepository>(
+      () => MovieListRepositoryImpl(
+        remoteDataSource: locator(),
+        localDataSource: locator(),
+      ),
+    )
+
+    // usecase
+    ..registerLazySingleton(
+      () => GetUpcomingMovieListUsecase(
+        repository: locator(),
+      ),
+    )
+    ..registerLazySingleton(
+      () => GetNowPlayingMovieListUsecase(
+        repository: locator(),
+      ),
+    )
+
+    // data source
+    ..registerLazySingleton<ListMovieRemoteDataSource>(
+      () => ListMovieRemoteDataSourceImpl(
+        client: locator(),
+      ),
+    )
+    ..registerLazySingleton<ListMovieLocalDataSource>(
+      () => ListMovieLocalDataSourceImpl(
+        cacheHandler: locator(),
+      ),
+    )
+
+    // BLOC
+    ..registerFactory(
+      () => GetUpcomingMoviesBloc(
+        locator(),
+      ),
+    )
+    ..registerFactory(
+      () => GetNowPlayingMoviesBloc(
+        locator(),
+      ),
+    )
 
     // external
     ..registerLazySingleton(
