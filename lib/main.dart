@@ -42,6 +42,11 @@ class MainApp extends StatelessWidget {
             create: (context) => locator<GetNowPlayingMoviesBloc>()
               ..add(const GetNowPlayingMoviesEvent.getNowPlayingMovies(1)),
           ),
+          BlocProvider(
+            create: (context) => locator<GetGenreListBloc>()
+              ..add(const GetGenreListEvent.getGenreList()),
+            lazy: false,
+          ),
         ],
         child: MaterialApp(
           onGenerateRoute: AppRoutes.onGenerateRoutes,

@@ -8,6 +8,11 @@ abstract class ListMovieLocalDataSource {
   Future<String> saveUpcomingMovies(ResponseListMovie movieList);
   Future<ResponseListMovie> getNowPlayingMovies();
   Future<String> saveNowPlaying(ResponseListMovie movieList);
+  Future<bool> isGenreOpen();
+  Future<List<Genre>> getGenreList();
+  Future<String> saveGenreList(List<Genre> genreList);
+  Future<ResponseListMovie> filterUpcomingMovie(int id);
+  Future<ResponseListMovie> filterNowPlayingMovie(int id);
 }
 
 class ListMovieLocalDataSourceImpl implements ListMovieLocalDataSource {
@@ -79,9 +84,98 @@ class ListMovieLocalDataSourceImpl implements ListMovieLocalDataSource {
       if (result == null) {
         throw CacheException(message: "Can't Save Now Playing Movies");
       }
-      return 'Success saving Now Playinh Movies';
+      return 'Success saving Now Playing Movies';
     } on CacheException catch (e) {
       throw CacheException(message: e.message);
     }
+  }
+
+  @override
+  Future<List<Genre>> getGenreList() async {
+    try {
+      final result = await cacheHandler.getCache(
+        boxKey: Constant.genreKey,
+      );
+
+      if (result == null) {
+        throw CacheException(message: "Can't get Genre List");
+      }
+
+      final res = json.decode(result);
+      return List<Genre>.from(res.map((e) => Genre.fromJson(e)));
+    } on CacheException catch (e) {
+      throw CacheException(message: e.message);
+    }
+  }
+
+  @override
+  Future<String> saveGenreList(List<Genre> movieList) async {
+    try {
+      final result = await cacheHandler.setCache(
+        boxKey: Constant.genreKey,
+        value: jsonEncode((movieList).map((e) => e.toJson()).toList()),
+      );
+      if (result == null) {
+        throw CacheException(message: "Can't Save Genre List");
+      }
+      return 'Success saving Genre List';
+    } on CacheException catch (e) {
+      throw CacheException(message: e.message);
+    }
+  }
+
+  @override
+  Future<ResponseListMovie> filterUpcomingMovie(int id) async {
+    try {
+      final result = await cacheHandler.getCache(
+        boxKey: Constant.upcomingKey,
+      );
+
+      if (result == null) {
+        throw CacheException(message: "Can't get Upcoming Movies data");
+      }
+
+      var listMovie = ResponseListMovie.fromJson(jsonDecode(result))
+          .results
+          .where((element) => (element.genreIds.contains(id)))
+          .toList();
+
+      return ResponseListMovie.fromJson(jsonDecode(result)).copyWith(
+        results: listMovie,
+      );
+    } on CacheException catch (e) {
+      throw CacheException(message: e.message);
+    }
+  }
+
+  @override
+  Future<ResponseListMovie> filterNowPlayingMovie(int id) async {
+    try {
+      final result = await cacheHandler.getCache(
+        boxKey: Constant.nowPlayingKey,
+      );
+
+      if (result == null) {
+        throw CacheException(message: "Can't get Now Playing Movies data");
+      }
+
+      var listMovie = ResponseListMovie.fromJson(jsonDecode(result))
+          .results
+          .where((element) => (element.genreIds.contains(id)))
+          .toList();
+
+      return ResponseListMovie.fromJson(jsonDecode(result)).copyWith(
+        results: listMovie,
+      );
+    } on CacheException catch (e) {
+      throw CacheException(message: e.message);
+    }
+  }
+
+  @override
+  Future<bool> isGenreOpen() async {
+    final result = cacheHandler.isBoxOpen(Constant.genreKey);
+
+    return result;
   }
 }

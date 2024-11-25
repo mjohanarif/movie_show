@@ -58,6 +58,8 @@ class CacheHandler {
   }
 
   // get box from hive
+  bool isBoxOpen(String boxKey) => cache.isBoxOpen(boxKey);
+
   Future<Box> _getBox(String boxKey) async {
     if (cache.isBoxOpen(boxKey)) {
       return cache.box<dynamic>(boxKey);

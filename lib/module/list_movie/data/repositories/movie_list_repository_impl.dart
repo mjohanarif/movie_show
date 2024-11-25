@@ -27,6 +27,8 @@ class MovieListRepositoryImpl implements MovieListRepository {
       return Right(result);
     } on ServerException catch (exception) {
       return Left(ServerFailure(exception.message));
+    } on CacheException catch (exception) {
+      return Left(CacheFailure(exception.message));
     }
   }
 
@@ -45,6 +47,51 @@ class MovieListRepositoryImpl implements MovieListRepository {
       return Right(result);
     } on ServerException catch (exception) {
       return Left(ServerFailure(exception.message));
+    } on CacheException catch (exception) {
+      return Left(CacheFailure(exception.message));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<Genre>>> getGenreList() async {
+    try {
+      final List<Genre> result;
+      if (await localDataSource.isGenreOpen()) {
+        result = await localDataSource.getGenreList();
+      } else {
+        result = await remoteDataSource.getGenreList();
+      }
+
+      localDataSource.saveGenreList(result);
+      return Right(result);
+    } on ServerException catch (exception) {
+      return Left(ServerFailure(exception.message));
+    } on CacheException catch (exception) {
+      return Left(CacheFailure(exception.message));
+    }
+  }
+
+  @override
+  Future<Either<Failure, ResponseListMovie>> filterNowPlayingMovie(
+    int id,
+  ) async {
+    try {
+      final result = await localDataSource.filterNowPlayingMovie(id);
+
+      return Right(result);
+    } on CacheException catch (exception) {
+      return Left(CacheFailure(exception.message));
+    }
+  }
+
+  @override
+  Future<Either<Failure, ResponseListMovie>> filterUpcomingMovie(int id) async {
+    try {
+      final result = await localDataSource.filterUpcomingMovie(id);
+
+      return Right(result);
+    } on CacheException catch (exception) {
+      return Left(CacheFailure(exception.message));
     }
   }
 }

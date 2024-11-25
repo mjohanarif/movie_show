@@ -30,6 +30,21 @@ Future<void> initLocator() async {
         repository: locator(),
       ),
     )
+    ..registerLazySingleton(
+      () => GetGenreListUsecase(
+        repository: locator(),
+      ),
+    )
+    ..registerLazySingleton(
+      () => FilterUpcomingMovieUsecase(
+        repository: locator(),
+      ),
+    )
+    ..registerLazySingleton(
+      () => FilterNowPlayingMovieUsecase(
+        repository: locator(),
+      ),
+    )
 
     // data source
     ..registerLazySingleton<ListMovieRemoteDataSource>(
@@ -47,10 +62,17 @@ Future<void> initLocator() async {
     ..registerFactory(
       () => GetUpcomingMoviesBloc(
         locator(),
+        locator(),
       ),
     )
     ..registerFactory(
       () => GetNowPlayingMoviesBloc(
+        locator(),
+        locator(),
+      ),
+    )
+    ..registerFactory(
+      () => GetGenreListBloc(
         locator(),
       ),
     )

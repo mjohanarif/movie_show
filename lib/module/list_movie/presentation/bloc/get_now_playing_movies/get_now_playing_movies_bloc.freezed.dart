@@ -20,18 +20,24 @@ mixin _$GetNowPlayingMoviesEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(int page) getNowPlayingMovies,
+    required TResult Function(int id) filterNowPlayingMovies,
+    required TResult Function() unfilterNowPlayingMovies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(int page)? getNowPlayingMovies,
+    TResult? Function(int id)? filterNowPlayingMovies,
+    TResult? Function()? unfilterNowPlayingMovies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(int page)? getNowPlayingMovies,
+    TResult Function(int id)? filterNowPlayingMovies,
+    TResult Function()? unfilterNowPlayingMovies,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +45,27 @@ mixin _$GetNowPlayingMoviesEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetNowPlayingMovies value) getNowPlayingMovies,
+    required TResult Function(_FilterNowPlayingMovies value)
+        filterNowPlayingMovies,
+    required TResult Function(_UnfilterNowPlayingMovies value)
+        unfilterNowPlayingMovies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetNowPlayingMovies value)? getNowPlayingMovies,
+    TResult? Function(_FilterNowPlayingMovies value)? filterNowPlayingMovies,
+    TResult? Function(_UnfilterNowPlayingMovies value)?
+        unfilterNowPlayingMovies,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetNowPlayingMovies value)? getNowPlayingMovies,
+    TResult Function(_FilterNowPlayingMovies value)? filterNowPlayingMovies,
+    TResult Function(_UnfilterNowPlayingMovies value)? unfilterNowPlayingMovies,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,6 +136,8 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(int page) getNowPlayingMovies,
+    required TResult Function(int id) filterNowPlayingMovies,
+    required TResult Function() unfilterNowPlayingMovies,
   }) {
     return started();
   }
@@ -130,6 +147,8 @@ class _$StartedImpl implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(int page)? getNowPlayingMovies,
+    TResult? Function(int id)? filterNowPlayingMovies,
+    TResult? Function()? unfilterNowPlayingMovies,
   }) {
     return started?.call();
   }
@@ -139,6 +158,8 @@ class _$StartedImpl implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(int page)? getNowPlayingMovies,
+    TResult Function(int id)? filterNowPlayingMovies,
+    TResult Function()? unfilterNowPlayingMovies,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -152,6 +173,10 @@ class _$StartedImpl implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetNowPlayingMovies value) getNowPlayingMovies,
+    required TResult Function(_FilterNowPlayingMovies value)
+        filterNowPlayingMovies,
+    required TResult Function(_UnfilterNowPlayingMovies value)
+        unfilterNowPlayingMovies,
   }) {
     return started(this);
   }
@@ -161,6 +186,9 @@ class _$StartedImpl implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetNowPlayingMovies value)? getNowPlayingMovies,
+    TResult? Function(_FilterNowPlayingMovies value)? filterNowPlayingMovies,
+    TResult? Function(_UnfilterNowPlayingMovies value)?
+        unfilterNowPlayingMovies,
   }) {
     return started?.call(this);
   }
@@ -170,6 +198,8 @@ class _$StartedImpl implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetNowPlayingMovies value)? getNowPlayingMovies,
+    TResult Function(_FilterNowPlayingMovies value)? filterNowPlayingMovies,
+    TResult Function(_UnfilterNowPlayingMovies value)? unfilterNowPlayingMovies,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -255,6 +285,8 @@ class _$GetNowPlayingMoviesImpl implements _GetNowPlayingMovies {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(int page) getNowPlayingMovies,
+    required TResult Function(int id) filterNowPlayingMovies,
+    required TResult Function() unfilterNowPlayingMovies,
   }) {
     return getNowPlayingMovies(page);
   }
@@ -264,6 +296,8 @@ class _$GetNowPlayingMoviesImpl implements _GetNowPlayingMovies {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(int page)? getNowPlayingMovies,
+    TResult? Function(int id)? filterNowPlayingMovies,
+    TResult? Function()? unfilterNowPlayingMovies,
   }) {
     return getNowPlayingMovies?.call(page);
   }
@@ -273,6 +307,8 @@ class _$GetNowPlayingMoviesImpl implements _GetNowPlayingMovies {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(int page)? getNowPlayingMovies,
+    TResult Function(int id)? filterNowPlayingMovies,
+    TResult Function()? unfilterNowPlayingMovies,
     required TResult orElse(),
   }) {
     if (getNowPlayingMovies != null) {
@@ -286,6 +322,10 @@ class _$GetNowPlayingMoviesImpl implements _GetNowPlayingMovies {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_GetNowPlayingMovies value) getNowPlayingMovies,
+    required TResult Function(_FilterNowPlayingMovies value)
+        filterNowPlayingMovies,
+    required TResult Function(_UnfilterNowPlayingMovies value)
+        unfilterNowPlayingMovies,
   }) {
     return getNowPlayingMovies(this);
   }
@@ -295,6 +335,9 @@ class _$GetNowPlayingMoviesImpl implements _GetNowPlayingMovies {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_GetNowPlayingMovies value)? getNowPlayingMovies,
+    TResult? Function(_FilterNowPlayingMovies value)? filterNowPlayingMovies,
+    TResult? Function(_UnfilterNowPlayingMovies value)?
+        unfilterNowPlayingMovies,
   }) {
     return getNowPlayingMovies?.call(this);
   }
@@ -304,6 +347,8 @@ class _$GetNowPlayingMoviesImpl implements _GetNowPlayingMovies {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GetNowPlayingMovies value)? getNowPlayingMovies,
+    TResult Function(_FilterNowPlayingMovies value)? filterNowPlayingMovies,
+    TResult Function(_UnfilterNowPlayingMovies value)? unfilterNowPlayingMovies,
     required TResult orElse(),
   }) {
     if (getNowPlayingMovies != null) {
@@ -324,6 +369,290 @@ abstract class _GetNowPlayingMovies implements GetNowPlayingMoviesEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetNowPlayingMoviesImplCopyWith<_$GetNowPlayingMoviesImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FilterNowPlayingMoviesImplCopyWith<$Res> {
+  factory _$$FilterNowPlayingMoviesImplCopyWith(
+          _$FilterNowPlayingMoviesImpl value,
+          $Res Function(_$FilterNowPlayingMoviesImpl) then) =
+      __$$FilterNowPlayingMoviesImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int id});
+}
+
+/// @nodoc
+class __$$FilterNowPlayingMoviesImplCopyWithImpl<$Res>
+    extends _$GetNowPlayingMoviesEventCopyWithImpl<$Res,
+        _$FilterNowPlayingMoviesImpl>
+    implements _$$FilterNowPlayingMoviesImplCopyWith<$Res> {
+  __$$FilterNowPlayingMoviesImplCopyWithImpl(
+      _$FilterNowPlayingMoviesImpl _value,
+      $Res Function(_$FilterNowPlayingMoviesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GetNowPlayingMoviesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$FilterNowPlayingMoviesImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FilterNowPlayingMoviesImpl implements _FilterNowPlayingMovies {
+  const _$FilterNowPlayingMoviesImpl(this.id);
+
+  @override
+  final int id;
+
+  @override
+  String toString() {
+    return 'GetNowPlayingMoviesEvent.filterNowPlayingMovies(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FilterNowPlayingMoviesImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  /// Create a copy of GetNowPlayingMoviesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FilterNowPlayingMoviesImplCopyWith<_$FilterNowPlayingMoviesImpl>
+      get copyWith => __$$FilterNowPlayingMoviesImplCopyWithImpl<
+          _$FilterNowPlayingMoviesImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(int page) getNowPlayingMovies,
+    required TResult Function(int id) filterNowPlayingMovies,
+    required TResult Function() unfilterNowPlayingMovies,
+  }) {
+    return filterNowPlayingMovies(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(int page)? getNowPlayingMovies,
+    TResult? Function(int id)? filterNowPlayingMovies,
+    TResult? Function()? unfilterNowPlayingMovies,
+  }) {
+    return filterNowPlayingMovies?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(int page)? getNowPlayingMovies,
+    TResult Function(int id)? filterNowPlayingMovies,
+    TResult Function()? unfilterNowPlayingMovies,
+    required TResult orElse(),
+  }) {
+    if (filterNowPlayingMovies != null) {
+      return filterNowPlayingMovies(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetNowPlayingMovies value) getNowPlayingMovies,
+    required TResult Function(_FilterNowPlayingMovies value)
+        filterNowPlayingMovies,
+    required TResult Function(_UnfilterNowPlayingMovies value)
+        unfilterNowPlayingMovies,
+  }) {
+    return filterNowPlayingMovies(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetNowPlayingMovies value)? getNowPlayingMovies,
+    TResult? Function(_FilterNowPlayingMovies value)? filterNowPlayingMovies,
+    TResult? Function(_UnfilterNowPlayingMovies value)?
+        unfilterNowPlayingMovies,
+  }) {
+    return filterNowPlayingMovies?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetNowPlayingMovies value)? getNowPlayingMovies,
+    TResult Function(_FilterNowPlayingMovies value)? filterNowPlayingMovies,
+    TResult Function(_UnfilterNowPlayingMovies value)? unfilterNowPlayingMovies,
+    required TResult orElse(),
+  }) {
+    if (filterNowPlayingMovies != null) {
+      return filterNowPlayingMovies(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FilterNowPlayingMovies implements GetNowPlayingMoviesEvent {
+  const factory _FilterNowPlayingMovies(final int id) =
+      _$FilterNowPlayingMoviesImpl;
+
+  int get id;
+
+  /// Create a copy of GetNowPlayingMoviesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FilterNowPlayingMoviesImplCopyWith<_$FilterNowPlayingMoviesImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnfilterNowPlayingMoviesImplCopyWith<$Res> {
+  factory _$$UnfilterNowPlayingMoviesImplCopyWith(
+          _$UnfilterNowPlayingMoviesImpl value,
+          $Res Function(_$UnfilterNowPlayingMoviesImpl) then) =
+      __$$UnfilterNowPlayingMoviesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UnfilterNowPlayingMoviesImplCopyWithImpl<$Res>
+    extends _$GetNowPlayingMoviesEventCopyWithImpl<$Res,
+        _$UnfilterNowPlayingMoviesImpl>
+    implements _$$UnfilterNowPlayingMoviesImplCopyWith<$Res> {
+  __$$UnfilterNowPlayingMoviesImplCopyWithImpl(
+      _$UnfilterNowPlayingMoviesImpl _value,
+      $Res Function(_$UnfilterNowPlayingMoviesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of GetNowPlayingMoviesEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UnfilterNowPlayingMoviesImpl implements _UnfilterNowPlayingMovies {
+  const _$UnfilterNowPlayingMoviesImpl();
+
+  @override
+  String toString() {
+    return 'GetNowPlayingMoviesEvent.unfilterNowPlayingMovies()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnfilterNowPlayingMoviesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(int page) getNowPlayingMovies,
+    required TResult Function(int id) filterNowPlayingMovies,
+    required TResult Function() unfilterNowPlayingMovies,
+  }) {
+    return unfilterNowPlayingMovies();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(int page)? getNowPlayingMovies,
+    TResult? Function(int id)? filterNowPlayingMovies,
+    TResult? Function()? unfilterNowPlayingMovies,
+  }) {
+    return unfilterNowPlayingMovies?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(int page)? getNowPlayingMovies,
+    TResult Function(int id)? filterNowPlayingMovies,
+    TResult Function()? unfilterNowPlayingMovies,
+    required TResult orElse(),
+  }) {
+    if (unfilterNowPlayingMovies != null) {
+      return unfilterNowPlayingMovies();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetNowPlayingMovies value) getNowPlayingMovies,
+    required TResult Function(_FilterNowPlayingMovies value)
+        filterNowPlayingMovies,
+    required TResult Function(_UnfilterNowPlayingMovies value)
+        unfilterNowPlayingMovies,
+  }) {
+    return unfilterNowPlayingMovies(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetNowPlayingMovies value)? getNowPlayingMovies,
+    TResult? Function(_FilterNowPlayingMovies value)? filterNowPlayingMovies,
+    TResult? Function(_UnfilterNowPlayingMovies value)?
+        unfilterNowPlayingMovies,
+  }) {
+    return unfilterNowPlayingMovies?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetNowPlayingMovies value)? getNowPlayingMovies,
+    TResult Function(_FilterNowPlayingMovies value)? filterNowPlayingMovies,
+    TResult Function(_UnfilterNowPlayingMovies value)? unfilterNowPlayingMovies,
+    required TResult orElse(),
+  }) {
+    if (unfilterNowPlayingMovies != null) {
+      return unfilterNowPlayingMovies(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UnfilterNowPlayingMovies implements GetNowPlayingMoviesEvent {
+  const factory _UnfilterNowPlayingMovies() = _$UnfilterNowPlayingMoviesImpl;
 }
 
 /// @nodoc

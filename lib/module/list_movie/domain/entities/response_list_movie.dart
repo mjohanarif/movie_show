@@ -11,6 +11,8 @@ class ResponseListMovie with _$ResponseListMovie {
     required int page,
     @JsonKey(name: 'total_pages') required int totalPages,
     required List<Movie> results,
+    bool? isLoading,
+    bool? isFiltered,
   }) = _ResponseListMovie;
 
   factory ResponseListMovie.fromJson(Map<String, dynamic> json) =>

@@ -24,6 +24,8 @@ mixin _$ResponseListMovie {
   @JsonKey(name: 'total_pages')
   int get totalPages => throw _privateConstructorUsedError;
   List<Movie> get results => throw _privateConstructorUsedError;
+  bool? get isLoading => throw _privateConstructorUsedError;
+  bool? get isFiltered => throw _privateConstructorUsedError;
 
   /// Serializes this ResponseListMovie to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,7 +46,9 @@ abstract class $ResponseListMovieCopyWith<$Res> {
   $Res call(
       {int page,
       @JsonKey(name: 'total_pages') int totalPages,
-      List<Movie> results});
+      List<Movie> results,
+      bool? isLoading,
+      bool? isFiltered});
 }
 
 /// @nodoc
@@ -65,6 +69,8 @@ class _$ResponseListMovieCopyWithImpl<$Res, $Val extends ResponseListMovie>
     Object? page = null,
     Object? totalPages = null,
     Object? results = null,
+    Object? isLoading = freezed,
+    Object? isFiltered = freezed,
   }) {
     return _then(_value.copyWith(
       page: null == page
@@ -79,6 +85,14 @@ class _$ResponseListMovieCopyWithImpl<$Res, $Val extends ResponseListMovie>
           ? _value.results
           : results // ignore: cast_nullable_to_non_nullable
               as List<Movie>,
+      isLoading: freezed == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isFiltered: freezed == isFiltered
+          ? _value.isFiltered
+          : isFiltered // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -94,7 +108,9 @@ abstract class _$$ResponseListMovieImplCopyWith<$Res>
   $Res call(
       {int page,
       @JsonKey(name: 'total_pages') int totalPages,
-      List<Movie> results});
+      List<Movie> results,
+      bool? isLoading,
+      bool? isFiltered});
 }
 
 /// @nodoc
@@ -113,6 +129,8 @@ class __$$ResponseListMovieImplCopyWithImpl<$Res>
     Object? page = null,
     Object? totalPages = null,
     Object? results = null,
+    Object? isLoading = freezed,
+    Object? isFiltered = freezed,
   }) {
     return _then(_$ResponseListMovieImpl(
       page: null == page
@@ -127,6 +145,14 @@ class __$$ResponseListMovieImplCopyWithImpl<$Res>
           ? _value.results
           : results // ignore: cast_nullable_to_non_nullable
               as List<Movie>,
+      isLoading: freezed == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isFiltered: freezed == isFiltered
+          ? _value.isFiltered
+          : isFiltered // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -137,7 +163,9 @@ class _$ResponseListMovieImpl implements _ResponseListMovie {
   const _$ResponseListMovieImpl(
       {required this.page,
       @JsonKey(name: 'total_pages') required this.totalPages,
-      required this.results});
+      required this.results,
+      this.isLoading,
+      this.isFiltered});
 
   factory _$ResponseListMovieImpl.fromJson(Map<String, dynamic> json) =>
       _$$ResponseListMovieImplFromJson(json);
@@ -149,10 +177,14 @@ class _$ResponseListMovieImpl implements _ResponseListMovie {
   final int totalPages;
   @override
   final List<Movie> results;
+  @override
+  final bool? isLoading;
+  @override
+  final bool? isFiltered;
 
   @override
   String toString() {
-    return 'ResponseListMovie(page: $page, totalPages: $totalPages, results: $results)';
+    return 'ResponseListMovie(page: $page, totalPages: $totalPages, results: $results, isLoading: $isLoading, isFiltered: $isFiltered)';
   }
 
   @override
@@ -163,13 +195,17 @@ class _$ResponseListMovieImpl implements _ResponseListMovie {
             (identical(other.page, page) || other.page == page) &&
             (identical(other.totalPages, totalPages) ||
                 other.totalPages == totalPages) &&
-            const DeepCollectionEquality().equals(other.results, results));
+            const DeepCollectionEquality().equals(other.results, results) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.isFiltered, isFiltered) ||
+                other.isFiltered == isFiltered));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, page, totalPages,
-      const DeepCollectionEquality().hash(results));
+      const DeepCollectionEquality().hash(results), isLoading, isFiltered);
 
   /// Create a copy of ResponseListMovie
   /// with the given fields replaced by the non-null parameter values.
@@ -192,7 +228,9 @@ abstract class _ResponseListMovie implements ResponseListMovie {
   const factory _ResponseListMovie(
       {required final int page,
       @JsonKey(name: 'total_pages') required final int totalPages,
-      required final List<Movie> results}) = _$ResponseListMovieImpl;
+      required final List<Movie> results,
+      final bool? isLoading,
+      final bool? isFiltered}) = _$ResponseListMovieImpl;
 
   factory _ResponseListMovie.fromJson(Map<String, dynamic> json) =
       _$ResponseListMovieImpl.fromJson;
@@ -204,6 +242,10 @@ abstract class _ResponseListMovie implements ResponseListMovie {
   int get totalPages;
   @override
   List<Movie> get results;
+  @override
+  bool? get isLoading;
+  @override
+  bool? get isFiltered;
 
   /// Create a copy of ResponseListMovie
   /// with the given fields replaced by the non-null parameter values.

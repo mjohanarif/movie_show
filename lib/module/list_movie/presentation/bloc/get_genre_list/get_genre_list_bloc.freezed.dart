@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'get_upcoming_movies_bloc.dart';
+part of 'get_genre_list_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,79 +15,65 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$GetUpcomingMoviesEvent {
+mixin _$GetGenreListEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int page) getUpcomingMovies,
-    required TResult Function(int id) filterUpcomingMovies,
-    required TResult Function() unfilterUpcomingMovies,
+    required TResult Function() getGenreList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(int page)? getUpcomingMovies,
-    TResult? Function(int id)? filterUpcomingMovies,
-    TResult? Function()? unfilterUpcomingMovies,
+    TResult? Function()? getGenreList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int page)? getUpcomingMovies,
-    TResult Function(int id)? filterUpcomingMovies,
-    TResult Function()? unfilterUpcomingMovies,
+    TResult Function()? getGenreList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetUpcomingMovies value) getUpcomingMovies,
-    required TResult Function(_FilterUpcomingMovies value) filterUpcomingMovies,
-    required TResult Function(_UnfilterUpcomingMovies value)
-        unfilterUpcomingMovies,
+    required TResult Function(_GetGenreList value) getGenreList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetUpcomingMovies value)? getUpcomingMovies,
-    TResult? Function(_FilterUpcomingMovies value)? filterUpcomingMovies,
-    TResult? Function(_UnfilterUpcomingMovies value)? unfilterUpcomingMovies,
+    TResult? Function(_GetGenreList value)? getGenreList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetUpcomingMovies value)? getUpcomingMovies,
-    TResult Function(_FilterUpcomingMovies value)? filterUpcomingMovies,
-    TResult Function(_UnfilterUpcomingMovies value)? unfilterUpcomingMovies,
+    TResult Function(_GetGenreList value)? getGenreList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetUpcomingMoviesEventCopyWith<$Res> {
-  factory $GetUpcomingMoviesEventCopyWith(GetUpcomingMoviesEvent value,
-          $Res Function(GetUpcomingMoviesEvent) then) =
-      _$GetUpcomingMoviesEventCopyWithImpl<$Res, GetUpcomingMoviesEvent>;
+abstract class $GetGenreListEventCopyWith<$Res> {
+  factory $GetGenreListEventCopyWith(
+          GetGenreListEvent value, $Res Function(GetGenreListEvent) then) =
+      _$GetGenreListEventCopyWithImpl<$Res, GetGenreListEvent>;
 }
 
 /// @nodoc
-class _$GetUpcomingMoviesEventCopyWithImpl<$Res,
-        $Val extends GetUpcomingMoviesEvent>
-    implements $GetUpcomingMoviesEventCopyWith<$Res> {
-  _$GetUpcomingMoviesEventCopyWithImpl(this._value, this._then);
+class _$GetGenreListEventCopyWithImpl<$Res, $Val extends GetGenreListEvent>
+    implements $GetGenreListEventCopyWith<$Res> {
+  _$GetGenreListEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of GetUpcomingMoviesEvent
+  /// Create a copy of GetGenreListEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -100,13 +86,13 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$GetUpcomingMoviesEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$GetGenreListEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of GetUpcomingMoviesEvent
+  /// Create a copy of GetGenreListEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -117,7 +103,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'GetUpcomingMoviesEvent.started()';
+    return 'GetGenreListEvent.started()';
   }
 
   @override
@@ -133,9 +119,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int page) getUpcomingMovies,
-    required TResult Function(int id) filterUpcomingMovies,
-    required TResult Function() unfilterUpcomingMovies,
+    required TResult Function() getGenreList,
   }) {
     return started();
   }
@@ -144,9 +128,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(int page)? getUpcomingMovies,
-    TResult? Function(int id)? filterUpcomingMovies,
-    TResult? Function()? unfilterUpcomingMovies,
+    TResult? Function()? getGenreList,
   }) {
     return started?.call();
   }
@@ -155,9 +137,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int page)? getUpcomingMovies,
-    TResult Function(int id)? filterUpcomingMovies,
-    TResult Function()? unfilterUpcomingMovies,
+    TResult Function()? getGenreList,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -170,10 +150,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetUpcomingMovies value) getUpcomingMovies,
-    required TResult Function(_FilterUpcomingMovies value) filterUpcomingMovies,
-    required TResult Function(_UnfilterUpcomingMovies value)
-        unfilterUpcomingMovies,
+    required TResult Function(_GetGenreList value) getGenreList,
   }) {
     return started(this);
   }
@@ -182,9 +159,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetUpcomingMovies value)? getUpcomingMovies,
-    TResult? Function(_FilterUpcomingMovies value)? filterUpcomingMovies,
-    TResult? Function(_UnfilterUpcomingMovies value)? unfilterUpcomingMovies,
+    TResult? Function(_GetGenreList value)? getGenreList,
   }) {
     return started?.call(this);
   }
@@ -193,9 +168,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetUpcomingMovies value)? getUpcomingMovies,
-    TResult Function(_FilterUpcomingMovies value)? filterUpcomingMovies,
-    TResult Function(_UnfilterUpcomingMovies value)? unfilterUpcomingMovies,
+    TResult Function(_GetGenreList value)? getGenreList,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -205,358 +178,43 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements GetUpcomingMoviesEvent {
+abstract class _Started implements GetGenreListEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$GetUpcomingMoviesImplCopyWith<$Res> {
-  factory _$$GetUpcomingMoviesImplCopyWith(_$GetUpcomingMoviesImpl value,
-          $Res Function(_$GetUpcomingMoviesImpl) then) =
-      __$$GetUpcomingMoviesImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int page});
+abstract class _$$GetGenreListImplCopyWith<$Res> {
+  factory _$$GetGenreListImplCopyWith(
+          _$GetGenreListImpl value, $Res Function(_$GetGenreListImpl) then) =
+      __$$GetGenreListImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetUpcomingMoviesImplCopyWithImpl<$Res>
-    extends _$GetUpcomingMoviesEventCopyWithImpl<$Res, _$GetUpcomingMoviesImpl>
-    implements _$$GetUpcomingMoviesImplCopyWith<$Res> {
-  __$$GetUpcomingMoviesImplCopyWithImpl(_$GetUpcomingMoviesImpl _value,
-      $Res Function(_$GetUpcomingMoviesImpl) _then)
+class __$$GetGenreListImplCopyWithImpl<$Res>
+    extends _$GetGenreListEventCopyWithImpl<$Res, _$GetGenreListImpl>
+    implements _$$GetGenreListImplCopyWith<$Res> {
+  __$$GetGenreListImplCopyWithImpl(
+      _$GetGenreListImpl _value, $Res Function(_$GetGenreListImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of GetUpcomingMoviesEvent
+  /// Create a copy of GetGenreListEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? page = null,
-  }) {
-    return _then(_$GetUpcomingMoviesImpl(
-      null == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$GetUpcomingMoviesImpl implements _GetUpcomingMovies {
-  const _$GetUpcomingMoviesImpl(this.page);
-
-  @override
-  final int page;
+class _$GetGenreListImpl implements _GetGenreList {
+  const _$GetGenreListImpl();
 
   @override
   String toString() {
-    return 'GetUpcomingMoviesEvent.getUpcomingMovies(page: $page)';
+    return 'GetGenreListEvent.getGenreList()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetUpcomingMoviesImpl &&
-            (identical(other.page, page) || other.page == page));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, page);
-
-  /// Create a copy of GetUpcomingMoviesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetUpcomingMoviesImplCopyWith<_$GetUpcomingMoviesImpl> get copyWith =>
-      __$$GetUpcomingMoviesImplCopyWithImpl<_$GetUpcomingMoviesImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(int page) getUpcomingMovies,
-    required TResult Function(int id) filterUpcomingMovies,
-    required TResult Function() unfilterUpcomingMovies,
-  }) {
-    return getUpcomingMovies(page);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(int page)? getUpcomingMovies,
-    TResult? Function(int id)? filterUpcomingMovies,
-    TResult? Function()? unfilterUpcomingMovies,
-  }) {
-    return getUpcomingMovies?.call(page);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(int page)? getUpcomingMovies,
-    TResult Function(int id)? filterUpcomingMovies,
-    TResult Function()? unfilterUpcomingMovies,
-    required TResult orElse(),
-  }) {
-    if (getUpcomingMovies != null) {
-      return getUpcomingMovies(page);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_GetUpcomingMovies value) getUpcomingMovies,
-    required TResult Function(_FilterUpcomingMovies value) filterUpcomingMovies,
-    required TResult Function(_UnfilterUpcomingMovies value)
-        unfilterUpcomingMovies,
-  }) {
-    return getUpcomingMovies(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_GetUpcomingMovies value)? getUpcomingMovies,
-    TResult? Function(_FilterUpcomingMovies value)? filterUpcomingMovies,
-    TResult? Function(_UnfilterUpcomingMovies value)? unfilterUpcomingMovies,
-  }) {
-    return getUpcomingMovies?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_GetUpcomingMovies value)? getUpcomingMovies,
-    TResult Function(_FilterUpcomingMovies value)? filterUpcomingMovies,
-    TResult Function(_UnfilterUpcomingMovies value)? unfilterUpcomingMovies,
-    required TResult orElse(),
-  }) {
-    if (getUpcomingMovies != null) {
-      return getUpcomingMovies(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetUpcomingMovies implements GetUpcomingMoviesEvent {
-  const factory _GetUpcomingMovies(final int page) = _$GetUpcomingMoviesImpl;
-
-  int get page;
-
-  /// Create a copy of GetUpcomingMoviesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetUpcomingMoviesImplCopyWith<_$GetUpcomingMoviesImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$FilterUpcomingMoviesImplCopyWith<$Res> {
-  factory _$$FilterUpcomingMoviesImplCopyWith(_$FilterUpcomingMoviesImpl value,
-          $Res Function(_$FilterUpcomingMoviesImpl) then) =
-      __$$FilterUpcomingMoviesImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int id});
-}
-
-/// @nodoc
-class __$$FilterUpcomingMoviesImplCopyWithImpl<$Res>
-    extends _$GetUpcomingMoviesEventCopyWithImpl<$Res,
-        _$FilterUpcomingMoviesImpl>
-    implements _$$FilterUpcomingMoviesImplCopyWith<$Res> {
-  __$$FilterUpcomingMoviesImplCopyWithImpl(_$FilterUpcomingMoviesImpl _value,
-      $Res Function(_$FilterUpcomingMoviesImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GetUpcomingMoviesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_$FilterUpcomingMoviesImpl(
-      null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$FilterUpcomingMoviesImpl implements _FilterUpcomingMovies {
-  const _$FilterUpcomingMoviesImpl(this.id);
-
-  @override
-  final int id;
-
-  @override
-  String toString() {
-    return 'GetUpcomingMoviesEvent.filterUpcomingMovies(id: $id)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FilterUpcomingMoviesImpl &&
-            (identical(other.id, id) || other.id == id));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, id);
-
-  /// Create a copy of GetUpcomingMoviesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FilterUpcomingMoviesImplCopyWith<_$FilterUpcomingMoviesImpl>
-      get copyWith =>
-          __$$FilterUpcomingMoviesImplCopyWithImpl<_$FilterUpcomingMoviesImpl>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(int page) getUpcomingMovies,
-    required TResult Function(int id) filterUpcomingMovies,
-    required TResult Function() unfilterUpcomingMovies,
-  }) {
-    return filterUpcomingMovies(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(int page)? getUpcomingMovies,
-    TResult? Function(int id)? filterUpcomingMovies,
-    TResult? Function()? unfilterUpcomingMovies,
-  }) {
-    return filterUpcomingMovies?.call(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(int page)? getUpcomingMovies,
-    TResult Function(int id)? filterUpcomingMovies,
-    TResult Function()? unfilterUpcomingMovies,
-    required TResult orElse(),
-  }) {
-    if (filterUpcomingMovies != null) {
-      return filterUpcomingMovies(id);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_GetUpcomingMovies value) getUpcomingMovies,
-    required TResult Function(_FilterUpcomingMovies value) filterUpcomingMovies,
-    required TResult Function(_UnfilterUpcomingMovies value)
-        unfilterUpcomingMovies,
-  }) {
-    return filterUpcomingMovies(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_GetUpcomingMovies value)? getUpcomingMovies,
-    TResult? Function(_FilterUpcomingMovies value)? filterUpcomingMovies,
-    TResult? Function(_UnfilterUpcomingMovies value)? unfilterUpcomingMovies,
-  }) {
-    return filterUpcomingMovies?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_GetUpcomingMovies value)? getUpcomingMovies,
-    TResult Function(_FilterUpcomingMovies value)? filterUpcomingMovies,
-    TResult Function(_UnfilterUpcomingMovies value)? unfilterUpcomingMovies,
-    required TResult orElse(),
-  }) {
-    if (filterUpcomingMovies != null) {
-      return filterUpcomingMovies(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _FilterUpcomingMovies implements GetUpcomingMoviesEvent {
-  const factory _FilterUpcomingMovies(final int id) =
-      _$FilterUpcomingMoviesImpl;
-
-  int get id;
-
-  /// Create a copy of GetUpcomingMoviesEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FilterUpcomingMoviesImplCopyWith<_$FilterUpcomingMoviesImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UnfilterUpcomingMoviesImplCopyWith<$Res> {
-  factory _$$UnfilterUpcomingMoviesImplCopyWith(
-          _$UnfilterUpcomingMoviesImpl value,
-          $Res Function(_$UnfilterUpcomingMoviesImpl) then) =
-      __$$UnfilterUpcomingMoviesImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$UnfilterUpcomingMoviesImplCopyWithImpl<$Res>
-    extends _$GetUpcomingMoviesEventCopyWithImpl<$Res,
-        _$UnfilterUpcomingMoviesImpl>
-    implements _$$UnfilterUpcomingMoviesImplCopyWith<$Res> {
-  __$$UnfilterUpcomingMoviesImplCopyWithImpl(
-      _$UnfilterUpcomingMoviesImpl _value,
-      $Res Function(_$UnfilterUpcomingMoviesImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GetUpcomingMoviesEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$UnfilterUpcomingMoviesImpl implements _UnfilterUpcomingMovies {
-  const _$UnfilterUpcomingMoviesImpl();
-
-  @override
-  String toString() {
-    return 'GetUpcomingMoviesEvent.unfilterUpcomingMovies()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UnfilterUpcomingMoviesImpl);
+        (other.runtimeType == runtimeType && other is _$GetGenreListImpl);
   }
 
   @override
@@ -566,35 +224,29 @@ class _$UnfilterUpcomingMoviesImpl implements _UnfilterUpcomingMovies {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int page) getUpcomingMovies,
-    required TResult Function(int id) filterUpcomingMovies,
-    required TResult Function() unfilterUpcomingMovies,
+    required TResult Function() getGenreList,
   }) {
-    return unfilterUpcomingMovies();
+    return getGenreList();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(int page)? getUpcomingMovies,
-    TResult? Function(int id)? filterUpcomingMovies,
-    TResult? Function()? unfilterUpcomingMovies,
+    TResult? Function()? getGenreList,
   }) {
-    return unfilterUpcomingMovies?.call();
+    return getGenreList?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int page)? getUpcomingMovies,
-    TResult Function(int id)? filterUpcomingMovies,
-    TResult Function()? unfilterUpcomingMovies,
+    TResult Function()? getGenreList,
     required TResult orElse(),
   }) {
-    if (unfilterUpcomingMovies != null) {
-      return unfilterUpcomingMovies();
+    if (getGenreList != null) {
+      return getGenreList();
     }
     return orElse();
   }
@@ -603,52 +255,45 @@ class _$UnfilterUpcomingMoviesImpl implements _UnfilterUpcomingMovies {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetUpcomingMovies value) getUpcomingMovies,
-    required TResult Function(_FilterUpcomingMovies value) filterUpcomingMovies,
-    required TResult Function(_UnfilterUpcomingMovies value)
-        unfilterUpcomingMovies,
+    required TResult Function(_GetGenreList value) getGenreList,
   }) {
-    return unfilterUpcomingMovies(this);
+    return getGenreList(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetUpcomingMovies value)? getUpcomingMovies,
-    TResult? Function(_FilterUpcomingMovies value)? filterUpcomingMovies,
-    TResult? Function(_UnfilterUpcomingMovies value)? unfilterUpcomingMovies,
+    TResult? Function(_GetGenreList value)? getGenreList,
   }) {
-    return unfilterUpcomingMovies?.call(this);
+    return getGenreList?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetUpcomingMovies value)? getUpcomingMovies,
-    TResult Function(_FilterUpcomingMovies value)? filterUpcomingMovies,
-    TResult Function(_UnfilterUpcomingMovies value)? unfilterUpcomingMovies,
+    TResult Function(_GetGenreList value)? getGenreList,
     required TResult orElse(),
   }) {
-    if (unfilterUpcomingMovies != null) {
-      return unfilterUpcomingMovies(this);
+    if (getGenreList != null) {
+      return getGenreList(this);
     }
     return orElse();
   }
 }
 
-abstract class _UnfilterUpcomingMovies implements GetUpcomingMoviesEvent {
-  const factory _UnfilterUpcomingMovies() = _$UnfilterUpcomingMoviesImpl;
+abstract class _GetGenreList implements GetGenreListEvent {
+  const factory _GetGenreList() = _$GetGenreListImpl;
 }
 
 /// @nodoc
-mixin _$GetUpcomingMoviesState {
+mixin _$GetGenreListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResponseListMovie response) success,
+    required TResult Function(List<Genre> response) success,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -656,7 +301,7 @@ mixin _$GetUpcomingMoviesState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResponseListMovie response)? success,
+    TResult? Function(List<Genre> response)? success,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -664,7 +309,7 @@ mixin _$GetUpcomingMoviesState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResponseListMovie response)? success,
+    TResult Function(List<Genre> response)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -697,24 +342,23 @@ mixin _$GetUpcomingMoviesState {
 }
 
 /// @nodoc
-abstract class $GetUpcomingMoviesStateCopyWith<$Res> {
-  factory $GetUpcomingMoviesStateCopyWith(GetUpcomingMoviesState value,
-          $Res Function(GetUpcomingMoviesState) then) =
-      _$GetUpcomingMoviesStateCopyWithImpl<$Res, GetUpcomingMoviesState>;
+abstract class $GetGenreListStateCopyWith<$Res> {
+  factory $GetGenreListStateCopyWith(
+          GetGenreListState value, $Res Function(GetGenreListState) then) =
+      _$GetGenreListStateCopyWithImpl<$Res, GetGenreListState>;
 }
 
 /// @nodoc
-class _$GetUpcomingMoviesStateCopyWithImpl<$Res,
-        $Val extends GetUpcomingMoviesState>
-    implements $GetUpcomingMoviesStateCopyWith<$Res> {
-  _$GetUpcomingMoviesStateCopyWithImpl(this._value, this._then);
+class _$GetGenreListStateCopyWithImpl<$Res, $Val extends GetGenreListState>
+    implements $GetGenreListStateCopyWith<$Res> {
+  _$GetGenreListStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of GetUpcomingMoviesState
+  /// Create a copy of GetGenreListState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -727,13 +371,13 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$GetUpcomingMoviesStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$GetGenreListStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of GetUpcomingMoviesState
+  /// Create a copy of GetGenreListState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -744,7 +388,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'GetUpcomingMoviesState.initial()';
+    return 'GetGenreListState.initial()';
   }
 
   @override
@@ -761,7 +405,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResponseListMovie response) success,
+    required TResult Function(List<Genre> response) success,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -772,7 +416,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResponseListMovie response)? success,
+    TResult? Function(List<Genre> response)? success,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -783,7 +427,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResponseListMovie response)? success,
+    TResult Function(List<Genre> response)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -831,7 +475,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements GetUpcomingMoviesState {
+abstract class _Initial implements GetGenreListState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -844,13 +488,13 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$GetUpcomingMoviesStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$GetGenreListStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of GetUpcomingMoviesState
+  /// Create a copy of GetGenreListState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -861,7 +505,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'GetUpcomingMoviesState.loading()';
+    return 'GetGenreListState.loading()';
   }
 
   @override
@@ -878,7 +522,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResponseListMovie response) success,
+    required TResult Function(List<Genre> response) success,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -889,7 +533,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResponseListMovie response)? success,
+    TResult? Function(List<Genre> response)? success,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -900,7 +544,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResponseListMovie response)? success,
+    TResult Function(List<Genre> response)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -948,7 +592,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements GetUpcomingMoviesState {
+abstract class _Loading implements GetGenreListState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -958,20 +602,18 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ResponseListMovie response});
-
-  $ResponseListMovieCopyWith<$Res> get response;
+  $Res call({List<Genre> response});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$GetUpcomingMoviesStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$GetGenreListStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of GetUpcomingMoviesState
+  /// Create a copy of GetGenreListState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -980,34 +622,29 @@ class __$$SuccessImplCopyWithImpl<$Res>
   }) {
     return _then(_$SuccessImpl(
       null == response
-          ? _value.response
+          ? _value._response
           : response // ignore: cast_nullable_to_non_nullable
-              as ResponseListMovie,
+              as List<Genre>,
     ));
-  }
-
-  /// Create a copy of GetUpcomingMoviesState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ResponseListMovieCopyWith<$Res> get response {
-    return $ResponseListMovieCopyWith<$Res>(_value.response, (value) {
-      return _then(_value.copyWith(response: value));
-    });
   }
 }
 
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(this.response);
+  const _$SuccessImpl(final List<Genre> response) : _response = response;
 
+  final List<Genre> _response;
   @override
-  final ResponseListMovie response;
+  List<Genre> get response {
+    if (_response is EqualUnmodifiableListView) return _response;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_response);
+  }
 
   @override
   String toString() {
-    return 'GetUpcomingMoviesState.success(response: $response)';
+    return 'GetGenreListState.success(response: $response)';
   }
 
   @override
@@ -1015,14 +652,14 @@ class _$SuccessImpl implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl &&
-            (identical(other.response, response) ||
-                other.response == response));
+            const DeepCollectionEquality().equals(other._response, _response));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, response);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_response));
 
-  /// Create a copy of GetUpcomingMoviesState
+  /// Create a copy of GetGenreListState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -1035,7 +672,7 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResponseListMovie response) success,
+    required TResult Function(List<Genre> response) success,
     required TResult Function(String message) error,
   }) {
     return success(response);
@@ -1046,7 +683,7 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResponseListMovie response)? success,
+    TResult? Function(List<Genre> response)? success,
     TResult? Function(String message)? error,
   }) {
     return success?.call(response);
@@ -1057,7 +694,7 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResponseListMovie response)? success,
+    TResult Function(List<Genre> response)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1105,12 +742,12 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements GetUpcomingMoviesState {
-  const factory _Success(final ResponseListMovie response) = _$SuccessImpl;
+abstract class _Success implements GetGenreListState {
+  const factory _Success(final List<Genre> response) = _$SuccessImpl;
 
-  ResponseListMovie get response;
+  List<Genre> get response;
 
-  /// Create a copy of GetUpcomingMoviesState
+  /// Create a copy of GetGenreListState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
@@ -1128,13 +765,13 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$GetUpcomingMoviesStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$GetGenreListStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of GetUpcomingMoviesState
+  /// Create a copy of GetGenreListState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -1160,7 +797,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'GetUpcomingMoviesState.error(message: $message)';
+    return 'GetGenreListState.error(message: $message)';
   }
 
   @override
@@ -1174,7 +811,7 @@ class _$ErrorImpl implements _Error {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of GetUpcomingMoviesState
+  /// Create a copy of GetGenreListState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -1187,7 +824,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ResponseListMovie response) success,
+    required TResult Function(List<Genre> response) success,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -1198,7 +835,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ResponseListMovie response)? success,
+    TResult? Function(List<Genre> response)? success,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -1209,7 +846,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ResponseListMovie response)? success,
+    TResult Function(List<Genre> response)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1257,12 +894,12 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements GetUpcomingMoviesState {
+abstract class _Error implements GetGenreListState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;
 
-  /// Create a copy of GetUpcomingMoviesState
+  /// Create a copy of GetGenreListState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>

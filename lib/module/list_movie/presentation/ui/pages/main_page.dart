@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:movie_show/module/list_movie/presentation/ui/pages/upcoming_tab.dart';
+import 'package:movie_show/module/list_movie/presentation/ui/widgets/upcoming_tab.dart';
 import 'package:movie_show/module/list_movie/presentation/ui/widgets/now_playing_tab.dart';
 import 'package:movie_show/shared/shared.dart';
 

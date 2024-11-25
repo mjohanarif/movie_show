@@ -14,6 +14,8 @@ _$ResponseListMovieImpl _$$ResponseListMovieImplFromJson(
       results: (json['results'] as List<dynamic>)
           .map((e) => Movie.fromJson(e as Map<String, dynamic>))
           .toList(),
+      isLoading: json['isLoading'] as bool?,
+      isFiltered: json['isFiltered'] as bool?,
     );
 
 Map<String, dynamic> _$$ResponseListMovieImplToJson(
@@ -22,4 +24,6 @@ Map<String, dynamic> _$$ResponseListMovieImplToJson(
       'page': instance.page,
       'total_pages': instance.totalPages,
       'results': instance.results,
+      'isLoading': instance.isLoading,
+      'isFiltered': instance.isFiltered,
     };

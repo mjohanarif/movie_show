@@ -9,4 +9,5 @@ class Constant {
   static const String favoriteKey = 'favoriteKey';
   static const String upcomingKey = 'upcomingKey';
   static const String nowPlayingKey = 'nowPlayingKey';
+  static const String genreKey = 'genreKey';
 }
