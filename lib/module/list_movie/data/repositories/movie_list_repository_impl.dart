@@ -116,4 +116,15 @@ class MovieListRepositoryImpl implements MovieListRepository {
       return Left(ServerFailure(exception.message));
     }
   }
+
+  @override
+  Future<Either<Failure, ResponseListMovie>> searhMovie(String query) async {
+    try {
+      final result = await remoteDataSource.searchMovie(query);
+
+      return Right(result);
+    } on ServerException catch (exception) {
+      return Left(ServerFailure(exception.message));
+    }
+  }
 }

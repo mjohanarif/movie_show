@@ -5,6 +5,7 @@ import 'package:hive/hive.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:movie_show/module/list_movie/list_movie.dart';
 import 'package:movie_show/module/list_movie/presentation/bloc/favorite_bloc/favorite_bloc.dart';
+import 'package:movie_show/module/list_movie/presentation/bloc/search_movie/search_movie_bloc.dart';
 import 'package:movie_show/shared/shared.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -68,6 +69,11 @@ Future<void> initLocator() async {
         repository: locator(),
       ),
     )
+    ..registerLazySingleton(
+      () => SearchMovieUsecase(
+        repository: locator(),
+      ),
+    )
 
     // data source
     ..registerLazySingleton<ListMovieRemoteDataSource>(
@@ -112,6 +118,11 @@ Future<void> initLocator() async {
     ..registerFactory(
       () => FavoriteBloc(
         locator(),
+        locator(),
+      ),
+    )
+    ..registerFactory(
+      () => SearchMovieBloc(
         locator(),
       ),
     )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:movie_show/module/list_movie/presentation/ui/widgets/search_input.dart';
 import 'package:movie_show/module/list_movie/presentation/ui/widgets/upcoming_tab.dart';
 import 'package:movie_show/module/list_movie/presentation/ui/widgets/now_playing_tab.dart';
 import 'package:movie_show/shared/shared.dart';
@@ -29,6 +30,17 @@ class MainPage extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
+              SearchInput(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.search,
+                  );
+                },
+                readOnly: true,
+                onChanged: (value) {},
+              ),
+              AppSpacing.v16(),
               TabBar(
                 dividerColor: AppColors.secondary,
                 unselectedLabelColor: Colors.grey.shade700,

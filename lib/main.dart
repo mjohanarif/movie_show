@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_show/injection.dart';
 import 'package:movie_show/module/list_movie/list_movie.dart';
 import 'package:movie_show/module/list_movie/presentation/bloc/favorite_bloc/favorite_bloc.dart';
+import 'package:movie_show/module/list_movie/presentation/bloc/search_movie/search_movie_bloc.dart';
 import 'package:movie_show/shared/shared.dart';
 
 import 'module/movie_detail/movie_detail.dart';
@@ -55,6 +56,9 @@ class MainApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => locator<FavoriteBloc>()..add(GetFavorite()),
+          ),
+          BlocProvider(
+            create: (context) => locator<SearchMovieBloc>(),
           ),
         ],
         child: MaterialApp(

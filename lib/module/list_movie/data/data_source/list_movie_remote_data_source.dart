@@ -5,6 +5,7 @@ import 'package:movie_show/shared/shared.dart';
 abstract class ListMovieRemoteDataSource {
   Future<ResponseListMovie> getUpcomingMovieList(int page);
   Future<ResponseListMovie> getNowPlayingMovieList(int page);
+  Future<ResponseListMovie> searchMovie(String query);
   Future<List<Genre>> getGenreList();
 }
 
@@ -34,6 +35,22 @@ class ListMovieRemoteDataSourceImpl implements ListMovieRemoteDataSource {
     try {
       final response =
           await client.get('movie/now_playing?&language=en-US&page=$page');
+
+      return ResponseListMovie.fromJson(response.data);
+    } on DioException catch (exception) {
+      throw ServerException(
+        message: exception.response != null
+            ? 'Error ${exception.response!.statusCode}: ${exception.response!.data['status_message']}'
+            : exception.message ?? 'Server Error',
+      );
+    }
+  }
+
+  @override
+  Future<ResponseListMovie> searchMovie(String query) async {
+    try {
+      final response = await client.get(
+          'search/movie?query=$query&include_adult=false&language=en-US&page=1');
 
       return ResponseListMovie.fromJson(response.data);
     } on DioException catch (exception) {
