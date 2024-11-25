@@ -7,6 +7,8 @@ import 'package:movie_show/module/list_movie/list_movie.dart';
 import 'package:movie_show/shared/shared.dart';
 import 'package:path_provider/path_provider.dart';
 
+import 'module/movie_detail/movie_detail.dart';
+
 final locator = GetIt.instance;
 
 Future<void> initLocator() async {
@@ -16,6 +18,11 @@ Future<void> initLocator() async {
       () => MovieListRepositoryImpl(
         remoteDataSource: locator(),
         localDataSource: locator(),
+      ),
+    )
+    ..registerLazySingleton<MovieDetailRepository>(
+      () => MovieDetailRepositoryImpl(
+        remoteDataSource: locator(),
       ),
     )
 
@@ -45,6 +52,11 @@ Future<void> initLocator() async {
         repository: locator(),
       ),
     )
+    ..registerLazySingleton(
+      () => GetMovieDetailUsecase(
+        repository: locator(),
+      ),
+    )
 
     // data source
     ..registerLazySingleton<ListMovieRemoteDataSource>(
@@ -55,6 +67,11 @@ Future<void> initLocator() async {
     ..registerLazySingleton<ListMovieLocalDataSource>(
       () => ListMovieLocalDataSourceImpl(
         cacheHandler: locator(),
+      ),
+    )
+    ..registerLazySingleton<MovieDetailRemoteDataSource>(
+      () => MovieDetailRemoteDataSourceImpl(
+        client: locator(),
       ),
     )
 
@@ -73,6 +90,11 @@ Future<void> initLocator() async {
     )
     ..registerFactory(
       () => GetGenreListBloc(
+        locator(),
+      ),
+    )
+    ..registerFactory(
+      () => GetMovieDetailBloc(
         locator(),
       ),
     )

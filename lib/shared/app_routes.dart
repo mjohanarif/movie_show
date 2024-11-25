@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:movie_show/module/list_movie/list_movie.dart';
+import 'package:movie_show/module/movie_detail/movie_detail.dart';
 
 class AppRoutes {
   static const String main = '/';
+  static const String movieDetail = '/movie-detail';
   static Route onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
       case main:
         return _materialRoute(
           const MainPage(),
+        );
+
+      case movieDetail:
+        return _materialRoute(
+          const MovieDetailPage(),
         );
 
       default:

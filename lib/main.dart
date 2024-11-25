@@ -7,6 +7,8 @@ import 'package:movie_show/injection.dart';
 import 'package:movie_show/module/list_movie/list_movie.dart';
 import 'package:movie_show/shared/shared.dart';
 
+import 'module/movie_detail/movie_detail.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initLocator();
@@ -46,6 +48,9 @@ class MainApp extends StatelessWidget {
             create: (context) => locator<GetGenreListBloc>()
               ..add(const GetGenreListEvent.getGenreList()),
             lazy: false,
+          ),
+          BlocProvider(
+            create: (context) => locator<GetMovieDetailBloc>(),
           ),
         ],
         child: MaterialApp(
