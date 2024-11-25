@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_show/module/list_movie/list_movie.dart';
+import 'package:movie_show/module/list_movie/presentation/bloc/favorite_bloc/favorite_bloc.dart';
 import 'package:movie_show/module/movie_detail/movie_detail.dart';
 import 'package:movie_show/shared/shared.dart';
 
@@ -37,14 +38,37 @@ class MovieCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  movie.title,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        movie.title,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    BlocBuilder<FavoriteBloc, FavoriteState>(
+                      builder: (context, stateFavorite) {
+                        return GestureDetector(
+                          onTap: () {
+                            context
+                                .read<FavoriteBloc>()
+                                .add(SetFavorite(movie));
+                          },
+                          child: Icon(
+                            Icons.favorite,
+                            color: stateFavorite.favoriteLists(movie.id)
+                                ? AppColors.primary
+                                : null,
+                          ),
+                        );
+                      },
+                    ),
+                  ],
                 ),
                 const AppSpacing(v: 6),
                 Text(

@@ -8,4 +8,6 @@ abstract class MovieListRepository {
   Future<Either<Failure, List<Genre>>> getGenreList();
   Future<Either<Failure, ResponseListMovie>> filterUpcomingMovie(int id);
   Future<Either<Failure, ResponseListMovie>> filterNowPlayingMovie(int id);
+  Future<Either<Failure, List<Movie>>> favoriteMovie(Movie movie);
+  Future<Either<Failure, List<Movie>>> getFavoriteMovie();
 }

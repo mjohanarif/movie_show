@@ -12,6 +12,18 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(
+            context,
+            AppRoutes.favorite,
+          );
+        },
+        child: const Icon(
+          Icons.favorite,
+          color: AppColors.primary,
+        ),
+      ),
       body: DefaultTabController(
         length: 2,
         child: SafeArea(

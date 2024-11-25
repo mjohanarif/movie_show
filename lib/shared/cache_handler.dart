@@ -47,7 +47,7 @@ class CacheHandler {
     try {
       final box = await _getBox(boxKey);
       final Object? data = box.get(boxKey);
-      if (data is! T) {
+      if (data is! T?) {
         throw CacheException(message: "Data type is not the same");
       }
 

@@ -94,4 +94,26 @@ class MovieListRepositoryImpl implements MovieListRepository {
       return Left(CacheFailure(exception.message));
     }
   }
+
+  @override
+  Future<Either<Failure, List<Movie>>> favoriteMovie(Movie movie) async {
+    try {
+      final result = await localDataSource.favoriteMovie(movie);
+
+      return Right(result);
+    } on ServerException catch (exception) {
+      return Left(ServerFailure(exception.message));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<Movie>>> getFavoriteMovie() async {
+    try {
+      final result = await localDataSource.getFavoriteMovie();
+
+      return Right(result);
+    } on ServerException catch (exception) {
+      return Left(ServerFailure(exception.message));
+    }
+  }
 }

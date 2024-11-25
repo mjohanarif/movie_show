@@ -13,6 +13,8 @@ abstract class ListMovieLocalDataSource {
   Future<String> saveGenreList(List<Genre> genreList);
   Future<ResponseListMovie> filterUpcomingMovie(int id);
   Future<ResponseListMovie> filterNowPlayingMovie(int id);
+  Future<List<Movie>> favoriteMovie(Movie movie);
+  Future<List<Movie>> getFavoriteMovie();
 }
 
 class ListMovieLocalDataSourceImpl implements ListMovieLocalDataSource {
@@ -177,5 +179,78 @@ class ListMovieLocalDataSourceImpl implements ListMovieLocalDataSource {
     final result = cacheHandler.isBoxOpen(Constant.genreKey);
 
     return result;
+  }
+
+  @override
+  Future<List<Movie>> favoriteMovie(Movie movie) async {
+    try {
+      List<Movie> results = [];
+      final result = await cacheHandler.getCache(
+        boxKey: Constant.favoriteKey,
+      );
+
+      if (result == null) {
+        results.add(movie);
+        final result = await cacheHandler.setCache(
+          boxKey: Constant.favoriteKey,
+          value: jsonEncode((results).map((e) => e.toJson()).toList()),
+        );
+        if (result == null) {
+          throw CacheException(message: "Can't Save favorite List");
+        }
+        final resultList = await cacheHandler.getCache(
+          boxKey: Constant.favoriteKey,
+        );
+        final res = json.decode(resultList);
+        return List<Movie>.from(res.map((e) => Movie.fromJson(e)));
+      }
+      final res = json.decode(result);
+      results = List<Movie>.from(res.map((e) => Movie.fromJson(e)));
+      var indexMovie = results.indexWhere((e) => (e.id == movie.id));
+      if (indexMovie == -1) {
+        results.add(movie);
+        final result = await cacheHandler.setCache(
+          boxKey: Constant.favoriteKey,
+          value: jsonEncode((results).map((e) => e.toJson()).toList()),
+        );
+        if (result == null) {
+          throw CacheException(message: "Can't Save favorite List");
+        }
+      } else {
+        results.removeAt(indexMovie);
+        final result = await cacheHandler.setCache(
+          boxKey: Constant.favoriteKey,
+          value: jsonEncode((results).map((e) => e.toJson()).toList()),
+        );
+        if (result == null) {
+          throw CacheException(message: "Can't Save favorite List");
+        }
+      }
+      final resultList = await cacheHandler.getCache(
+        boxKey: Constant.favoriteKey,
+      );
+      final resFavorite = json.decode(resultList);
+      return List<Movie>.from(resFavorite.map((e) => Movie.fromJson(e)));
+    } on CacheException catch (e) {
+      throw CacheException(message: e.message);
+    }
+  }
+
+  @override
+  Future<List<Movie>> getFavoriteMovie() async {
+    try {
+      final result = await cacheHandler.getCache(
+        boxKey: Constant.favoriteKey,
+      );
+
+      if (result == null) {
+        return [];
+      }
+
+      final res = json.decode(result);
+      return List<Movie>.from(res.map((e) => Movie.fromJson(e)));
+    } on CacheException catch (e) {
+      throw CacheException(message: e.message);
+    }
   }
 }
